@@ -1,24 +1,4 @@
-// ┌─────────────────────────────────────────────────────────────────────┐ \\
-// │ Raphaël @@VERSION - JavaScript Vector Library                       │ \\
-// ├─────────────────────────────────────────────────────────────────────┤ \\
-// │ VML Module                                                          │ \\
-// ├─────────────────────────────────────────────────────────────────────┤ \\
-// │ Copyright (c) 2008-2011 Dmitry Baranovskiy (http://raphaeljs.com)   │ \\
-// │ Copyright (c) 2008-2011 Sencha Labs (http://sencha.com)             │ \\
-// │ Licensed under the MIT (http://raphaeljs.com/license.html) license. │ \\
-// └─────────────────────────────────────────────────────────────────────┘ \\
-
-(function (glob, factory) {
-    if (typeof define === "function" && define.amd) {
-        define("raphael.vml", ["raphael.core"], function(raphael) {
-            return factory(raphael);
-        });
-    } else if (typeof exports === "object") {
-        factory(require("./raphael.core"));
-    } else {
-        factory(glob.Raphael);
-    }
-}(this, function(R) {
+define(["./raphael.core"], function(R) {
     if (R && !R.vml) {
         return;
     }
@@ -239,7 +219,6 @@
             addArrow(res, params["arrow-end"], 1);
         }
         if (params.opacity != null ||
-            params["stroke-width"] != null ||
             params.fill != null ||
             params.src != null ||
             params.stroke != null ||
@@ -768,7 +747,7 @@
         p.path = [];
         p.Path = E;
         setFillAndStroke(p, attr);
-        vml.canvas.appendChild(el);
+        vml.canvas && vml.canvas.appendChild(el);
         var skew = createNode("skew");
         skew.on = true;
         el.appendChild(skew);
@@ -1017,4 +996,4 @@
             };
         })(method);
     }
-}));
+});

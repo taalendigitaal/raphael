@@ -1,6 +1,37 @@
-2.2.0 • WIP
+2.2.7
+------------------
+  * Updating package.json dependencies
+  * Using custom eve instead of old eve in npm
+  * Fixed class as a reserved word in old browsers
+
+2.2.5 - 2.2.6
+------------------
+Duplicated tag by mistake.
+  * Using custom repo for eve in bower to avoid using a short sha in it.
+
+2.2.4
+------------------
+  * Fixed no-deps version with eve.
+
+2.2.3
+------------------
+  * Changed eve dependencies avoiding short sha and github url
+
+2.2.2
+------------------
+  * Improved elements ids, so multiple raphael instances are more reliable
+
+2.2.1
+------------------
+  * Removed name of amd module
+
+2.2.0
 ------------------
 
+  * Webpack build
+  * Added tests! (thanks @TheCloudlessSky)
+  * Strict error on method R.ninja
+  * Cross-browser gradient fixes
   * Reduce transform string to avoid long parsing times after several transformations
   * raphael.amd.js as main in package.json.
   * raphael.amd.js version to work with Browserify.
